@@ -24,7 +24,7 @@ export const bannerType = defineType({
       name: 'product',
       title: 'Product',
       type: 'reference', // Use a reference for product linking
-      to: [{ type: 'post' }], // Reference to the post type
+      to: [{ type: 'product' }], // Reference to the post type
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -72,8 +72,7 @@ export const bannerType = defineType({
     defineField({
       name: 'saleTime',
       title: 'Sale Time',
-      type: 'datetime',
-      validation: (rule) => rule.required(), // Ensure sale time is provided
+      type: 'string',
     }),
   ],
 });

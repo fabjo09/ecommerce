@@ -1,7 +1,6 @@
 import React from 'react'
-import {Header, Footer} from '../components'
+import {Header, Footer, Product} from '../components'
 import {client} from '../lib/client'
-
 const Home = ({products, banners}) => {
   return (
     <div>
@@ -15,10 +14,15 @@ const Home = ({products, banners}) => {
       </div>
 
       <div className='products-container'>
-        {products?.map((product)=> product.name)}
+        {products?.map((product) => 
+          <Product 
+            key={product._id}
+            product={product}
+          />    
+          )}
       </div>
 
-      <Footer />
+      <Footer footerBanner={banners && banners[0]}/>
     </div>
   )
 }
