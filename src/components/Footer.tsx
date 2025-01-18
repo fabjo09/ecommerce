@@ -1,39 +1,20 @@
 import React from 'react'
-import { urlFor } from '@/lib/client'
-import Link from 'next/link'
-import type { Banner } from "../types/BannerType"
+import { AiFillLinkedin , AiFillGithub , AiFillFolder } from 'react-icons/ai'
 
-interface Props {
-  footerBanner: Banner;
-}
 
-const Footer : React.FC<Props> = ({ footerBanner : {desc, discount, largeText1, largeText2, saleTime , smallText, midText, product, buttonText, image} }) => {
+const Footer = () => {
   return (
-    <div className="footer-banner-container">
-      <div className='banner-desc'>
-        <div className='left'>
-          <p>{discount} OFF</p>
-          <h3>{largeText1}</h3>
-          <h3>{largeText2}</h3>
-          <p>{saleTime}</p>
-        </div>
-        <div className='right'>
-          <p>{smallText}</p>
-          <h3>{midText}</h3>
-          <p>{desc}</p>
-          <Link href={`/product/${product}`}>
-            <button type='button'>
-              {buttonText}
-            </button>
-          </Link>
-        </div>
-        <img 
-          src={urlFor(image).url()}
-          className='footer-banner-image'
-        />
-      </div>
-
+    <div className='footer-container'>
+        <p>
+            2025 MonkeyType All rights reserved
+        </p>
+        <p className='icons'>
+            <AiFillFolder />
+            <AiFillLinkedin />
+            <AiFillGithub />
+        </p>
     </div>
+     
   )
 }
 

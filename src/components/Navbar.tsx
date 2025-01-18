@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='navbar-container'>
       <p className='logo'>
         <Link href={"/"}>
-          Monkey Shop
+          MonkeyType
         </Link>
       </p>
 

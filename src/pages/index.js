@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header, Footer, Product} from '../components'
+import {Header, FooterBanner, Product} from '../components'
 import {client} from '../lib/client'
 const Home = ({products, banners}) => {
   return (
@@ -22,7 +22,7 @@ const Home = ({products, banners}) => {
           )}
       </div>
 
-      <Footer footerBanner={banners && banners[0]}/>
+      <FooterBanner footerBanner={banners && banners[0]}/>
     </div>
   )
 }
