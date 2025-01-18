@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { client , urlFor } from "../../lib/client"
 import { AiFillStar , AiOutlineStar, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import Product from "../../components/Product"
+import { useStateContext } from "../../context/StateContext"
 
 const ProductDetails = ({product, products}) => {
 
     const { image , name , details , price } = product
     const [index, setIndex] = useState(0)
+    const { decreaseQty, increaseQty, qty , onAdd } = useStateContext()
 
   return (
     <div>
@@ -43,19 +45,19 @@ const ProductDetails = ({product, products}) => {
                 <div className='quantity'>
                     <h3>Qauntity :</h3>
                     <p className='quantity-desc'>
-                        <span className='minus' onClick={()=>null}>
+                        <span className='minus' onClick={decreaseQty}>
                             <AiOutlineMinus/>
                         </span>
                         <span className='num' onClick={()=>null}>
-                            0
+                            {qty}
                         </span>
-                        <span className='plus' onClick={()=>null}>
+                        <span className='plus' onClick={increaseQty}>
                             <AiOutlinePlus/>
                         </span>
                     </p>
                 </div>
                 <div className='buttons'>
-                    <button type='button' className='add-to-cart' onClick={()=>null}>
+                    <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty)}>
                         Add to Cart
                     </button>
                     <button type='button' className='buy-now' onClick={()=>null}>
