@@ -13,3 +13,8 @@ export interface Product {
     price: number;
     details: string;
   }
+
+  export interface CartItem extends Product {
+    quantity: number;
+  }
+  

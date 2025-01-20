@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.js", "src/context/StateContext.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.js", "src/context/StateContext.tsx"],
   "exclude": ["node_modules"]
 }
